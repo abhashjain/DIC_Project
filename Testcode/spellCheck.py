@@ -1,14 +1,15 @@
 import os, time, re
+os.getcwd()
 
 startTime = time.time()
 
-wordFile = open("words.txt","r")
+wordFile = open("..\\src\\words.txt","r")
 words = wordFile.read()
-# print("Words in file:",len(words))
+print("Words in dictionary:",len(words))
 
-inputDoc = open("guten.txt", "r", encoding="utf-8")
+inputDoc = open("..\\src\\guten.txt", "r", encoding="utf-8")
 doc = inputDoc.read().split()
-# print("Words in file:",len(doc))
+print("Words in file:",len(doc))
 
 
 ## Processing the input document
@@ -41,8 +42,9 @@ print("Total misspelled words =",len(misspelledWords))
 print("Total execution time = %s sec"%(time.time() - startTime))
 
 
-with open("outputPython.txt", "w") as outFile:
+with open("..//results//outputPython.txt", "w") as outFile:
     for word in misspelledWords:
         outFile.write(word)
         outFile.write("\n")
+print ("Incorrect words written to outputPython.txt")
 
