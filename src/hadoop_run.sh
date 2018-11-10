@@ -1,3 +1,3 @@
-javac TFIDF.java -cp $(hadoop classpath)
-jar cf TFIDF.jar TFIDF*.class
-hadoop jar TFIDF.jar TFIDF input
+javac SpellChecker.java -cp $(hadoop classpath)
+jar cf SpellChecker.jar SpellChecker*.class
+hadoop jar SpellChecker.jar SpellChecker input
