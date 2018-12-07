@@ -117,8 +117,10 @@ public class SpellChecker {
 		System.out.println("Reducer called");
 		for(Text t : values){
 			System.out.println("t value is: " + t.toString());
-			if(!dictonary.contains(t.toString().toLowerCase()))
-				context.write(key,t);
+			if(!dictonary.contains(t.toString().toLowerCase())){
+				if(!t.equals(" "))
+					context.write(key,t);
+			}
 		}
     }
 }
