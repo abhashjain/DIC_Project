@@ -7,5 +7,7 @@ topic = TopicPartition('output',0)
 consumer.assign([topic])
 
 for msg in consumer:
-		if "/" in msg.key:
-                	print(msg.key.split("/")[1]+" "+msg.value)
+	if "/" in msg.key:
+                print(msg.key.split("/")[1]+"\t"+msg.value)
+	else:
+                print(msg.key+"\t"+msg.value)
